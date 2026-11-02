@@ -15,7 +15,7 @@ const GOALS = [
   { id: '20', title: '20 минут', subtitle: 'Интенсив' },
 ];
 
-export default function GoalScreen({ onClose }) {
+export default function GoalScreen({ onNext, onClose }) {
   const [selectedGoal, setSelectedGoal] = useState('10');
 
   return (
@@ -35,7 +35,7 @@ export default function GoalScreen({ onClose }) {
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Сколько времени{'\n'}в день?</Text>
+          <Text style={styles.title}>Сколько времени{\n}в день?</Text>
           <Text style={styles.subtitle}>
             Выберите цель, её можно изменить позже.
           </Text>
@@ -61,7 +61,11 @@ export default function GoalScreen({ onClose }) {
           })}
         </View>
 
-        <TouchableOpacity style={styles.primaryButton} activeOpacity={0.8}>
+        <TouchableOpacity 
+          style={styles.primaryButton} 
+          activeOpacity={0.8}
+          onPress={onNext}
+        >
           <Text style={styles.primaryButtonText}>Продолжить</Text>
         </TouchableOpacity>
       </View>
