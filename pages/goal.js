@@ -35,7 +35,7 @@ export default function GoalScreen({ onNext, onClose }) {
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Сколько времени{\n}в день?</Text>
+          <Text style={styles.title}>Сколько времени {'\n'}в день?</Text>
           <Text style={styles.subtitle}>
             Выберите цель, её можно изменить позже.
           </Text>

@@ -9,14 +9,14 @@ import {
 } from 'react-native';
 
 const GOALS = [
-  { id: '5', title: 'С нуля', subtitle: 'Знаю пару слов' },
-  { id: '10', title: 'Начальный', subtitle: 'Понимаю простые фразы' },
-  { id: '15', title: 'Средний', subtitle: 'Могу поддержать разговор' },
-  { id: '20', title: 'Продвинутый', subtitle: 'Хочу говорить свободнее' },
+  { id: 'zero', title: 'С нуля', subtitle: 'Знаю пару слов' },
+  { id: 'beginner', title: 'Начальный', subtitle: 'Понимаю простые фразы' },
+  { id: 'intermediate', title: 'Средний', subtitle: 'Могу поддержать разговор' },
+  { id: 'advanced', title: 'Продвинутый', subtitle: 'Хочу говорить свободнее' },
 ];
 
-export default function LevelScreen({ onClose }) {
-  const [selectedGoal, setSelectedGoal] = useState('10');
+export default function LevelScreen({ onClose, onContinue }) {
+  const [selectedGoal, setSelectedGoal] = useState('beginner');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,7 +35,7 @@ export default function LevelScreen({ onClose }) {
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Какой у вас{\n}уровень?</Text>
+          <Text style={styles.title}>Какой у вас{'\n'}уровень?</Text>
           <Text style={styles.subtitle}>
             Мы подберём первые уроки.
           </Text>
@@ -61,7 +61,11 @@ export default function LevelScreen({ onClose }) {
           })}
         </View>
 
-        <TouchableOpacity style={styles.primaryButton} activeOpacity={0.8}>
+        <TouchableOpacity 
+          style={styles.primaryButton} 
+          activeOpacity={0.8}
+          onPress={() => onContinue?.(selectedGoal)}
+        >
           <Text style={styles.primaryButtonText}>Продолжить</Text>
         </TouchableOpacity>
       </View>

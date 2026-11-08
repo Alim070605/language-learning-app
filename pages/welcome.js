@@ -25,9 +25,7 @@ export default function WelcomeScreen({ onStart }) {
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.title}>
-            Английский по{\n}10 минут в день
-          </Text>
+          <Text style={styles.title}>Английский по{'\n'}10 минут в день</Text>
           <Text style={styles.subtitle}>
             Короткие уроки, карточки и повторение слов в удобное время.
           </Text>
